@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

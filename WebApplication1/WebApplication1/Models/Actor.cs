@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,7 +16,8 @@ namespace WebApplication1.Models
         public string Country { get; set; }
         public string Height { get; set; }
         public string String { get; set; }
+    public Prize Prize { get; set; }
 
-        public IList<MovieActor> MovieActors { get; set; }
+    public IList<MovieActor> MovieActors { get; set; }
     }
 }

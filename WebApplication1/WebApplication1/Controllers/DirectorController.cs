@@ -11,48 +11,48 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserBlogController : ControllerBase
+    public class DirectorController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public UserBlogController(APIDbContext context)
+        public DirectorController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/UserBlog
+        // GET: api/Director
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserBlog>>> GetUserBlogs()
+        public async Task<ActionResult<IEnumerable<Directors>>> GetDirectors()
         {
-            return await _context.UserBlogs.ToListAsync();
+            return await _context.Directors.ToListAsync();
         }
 
-        // GET: api/UserBlog/5
+        // GET: api/Director/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserBlog>> GetUserBlog(string id)
+        public async Task<ActionResult<Directors>> GetDirectors(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
+            var directors = await _context.Directors.FindAsync(id);
 
-            if (userBlog == null)
+            if (directors == null)
             {
                 return NotFound();
             }
 
-            return userBlog;
+            return directors;
         }
 
-        // PUT: api/UserBlog/5
+        // PUT: api/Director/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserBlog(string id, UserBlog userBlog)
+        public async Task<IActionResult> PutDirectors(string id, Directors directors)
         {
-            if (id != userBlog.BlogId)
+            if (id != directors.DirectorsId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(userBlog).State = EntityState.Modified;
+            _context.Entry(directors).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WebApplication1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserBlogExists(id))
+                if (!DirectorsExists(id))
                 {
                     return NotFound();
                 }
@@ -73,20 +73,20 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
 
-        // POST: api/UserBlog
+        // POST: api/Director
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<UserBlog>> PostUserBlog(UserBlog userBlog)
+        public async Task<ActionResult<Directors>> PostDirectors(Directors directors)
         {
-            _context.UserBlogs.Add(userBlog);
+            _context.Directors.Add(directors);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (UserBlogExists(userBlog.BlogId))
+                if (DirectorsExists(directors.DirectorsId))
                 {
                     return Conflict();
                 }
@@ -96,28 +96,28 @@ namespace WebApplication1.Controllers
                 }
             }
 
-            return CreatedAtAction("GetUserBlog", new { id = userBlog.BlogId }, userBlog);
+            return CreatedAtAction("GetDirectors", new { id = directors.DirectorsId }, directors);
         }
 
-        // DELETE: api/UserBlog/5
+        // DELETE: api/Director/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<UserBlog>> DeleteUserBlog(string id)
+        public async Task<ActionResult<Directors>> DeleteDirectors(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
-            if (userBlog == null)
+            var directors = await _context.Directors.FindAsync(id);
+            if (directors == null)
             {
                 return NotFound();
             }
 
-            _context.UserBlogs.Remove(userBlog);
+            _context.Directors.Remove(directors);
             await _context.SaveChangesAsync();
 
-            return userBlog;
+            return directors;
         }
 
-        private bool UserBlogExists(string id)
+        private bool DirectorsExists(string id)
         {
-            return _context.UserBlogs.Any(e => e.BlogId == id);
+            return _context.Directors.Any(e => e.DirectorsId == id);
         }
     }
 }

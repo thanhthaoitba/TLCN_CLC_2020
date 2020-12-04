@@ -12,6 +12,7 @@ import {userrate} from '../app/userrate/userrate.component'
 import {userprofile} from '../app/userprofile/userprofile.component'
 import {userfavoritieslist} from '../app/userfavoritieslist/userfavoritieslist.component'
 import {blogdetail} from '../app/blogdetail/blogdetail.component'
+
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
   { path: 'comming',             component: CommingSoon },
@@ -25,7 +26,7 @@ const routes: Routes = [
   { path: 'UserProfile',             component: userprofile },
   { path: 'UserFlim',             component: userfavoritieslist },
   { path: 'BlogDetail',             component: blogdetail },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

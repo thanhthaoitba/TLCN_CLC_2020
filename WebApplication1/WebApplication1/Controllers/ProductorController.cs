@@ -11,48 +11,48 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserBlogController : ControllerBase
+    public class ProductorController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public UserBlogController(APIDbContext context)
+        public ProductorController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/UserBlog
+        // GET: api/Productor
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserBlog>>> GetUserBlogs()
+        public async Task<ActionResult<IEnumerable<Productor>>> GetProductors()
         {
-            return await _context.UserBlogs.ToListAsync();
+            return await _context.Productors.ToListAsync();
         }
 
-        // GET: api/UserBlog/5
+        // GET: api/Productor/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserBlog>> GetUserBlog(string id)
+        public async Task<ActionResult<Productor>> GetProductor(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
+            var productor = await _context.Productors.FindAsync(id);
 
-            if (userBlog == null)
+            if (productor == null)
             {
                 return NotFound();
             }
 
-            return userBlog;
+            return productor;
         }
 
-        // PUT: api/UserBlog/5
+        // PUT: api/Productor/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserBlog(string id, UserBlog userBlog)
+        public async Task<IActionResult> PutProductor(string id, Productor productor)
         {
-            if (id != userBlog.BlogId)
+            if (id != productor.ProductorId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(userBlog).State = EntityState.Modified;
+            _context.Entry(productor).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WebApplication1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserBlogExists(id))
+                if (!ProductorExists(id))
                 {
                     return NotFound();
                 }
@@ -73,20 +73,20 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
 
-        // POST: api/UserBlog
+        // POST: api/Productor
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<UserBlog>> PostUserBlog(UserBlog userBlog)
+        public async Task<ActionResult<Productor>> PostProductor(Productor productor)
         {
-            _context.UserBlogs.Add(userBlog);
+            _context.Productors.Add(productor);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (UserBlogExists(userBlog.BlogId))
+                if (ProductorExists(productor.ProductorId))
                 {
                     return Conflict();
                 }
@@ -96,28 +96,28 @@ namespace WebApplication1.Controllers
                 }
             }
 
-            return CreatedAtAction("GetUserBlog", new { id = userBlog.BlogId }, userBlog);
+            return CreatedAtAction("GetProductor", new { id = productor.ProductorId }, productor);
         }
 
-        // DELETE: api/UserBlog/5
+        // DELETE: api/Productor/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<UserBlog>> DeleteUserBlog(string id)
+        public async Task<ActionResult<Productor>> DeleteProductor(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
-            if (userBlog == null)
+            var productor = await _context.Productors.FindAsync(id);
+            if (productor == null)
             {
                 return NotFound();
             }
 
-            _context.UserBlogs.Remove(userBlog);
+            _context.Productors.Remove(productor);
             await _context.SaveChangesAsync();
 
-            return userBlog;
+            return productor;
         }
 
-        private bool UserBlogExists(string id)
+        private bool ProductorExists(string id)
         {
-            return _context.UserBlogs.Any(e => e.BlogId == id);
+            return _context.Productors.Any(e => e.ProductorId == id);
         }
     }
 }

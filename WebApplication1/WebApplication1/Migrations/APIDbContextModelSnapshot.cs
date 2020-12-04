@@ -39,10 +39,15 @@ namespace WebApplication1.Migrations
                     b.Property<string>("Height")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PrizeId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("String")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ActorId");
+
+                    b.HasIndex("PrizeId");
 
                     b.ToTable("Actors");
                 });
@@ -64,6 +69,30 @@ namespace WebApplication1.Migrations
                     b.HasKey("BlogId");
 
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Directors", b =>
+                {
+                    b.Property<string>("DirectorsId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Content_Overview")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Directors_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PrizeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("DirectorsId");
+
+                    b.HasIndex("PrizeId");
+
+                    b.ToTable("Directors");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Genre", b =>
@@ -91,6 +120,9 @@ namespace WebApplication1.Migrations
                     b.Property<string>("Content_Overview")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("DirectorsId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int>("Length")
                         .HasColumnType("int");
 
@@ -100,10 +132,22 @@ namespace WebApplication1.Migrations
                     b.Property<string>("MovieName")
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("PrizeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductorId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("ReleaseYear")
                         .HasColumnType("nvarchar(5)");
 
                     b.HasKey("movieId");
+
+                    b.HasIndex("DirectorsId");
+
+                    b.HasIndex("PrizeId");
+
+                    b.HasIndex("ProductorId");
 
                     b.ToTable("Movies");
                 });
@@ -121,6 +165,35 @@ namespace WebApplication1.Migrations
                     b.HasIndex("ActorId");
 
                     b.ToTable("MovieActors");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Prize", b =>
+                {
+                    b.Property<string>("PrizeId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Prize_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PrizeId");
+
+                    b.ToTable("Prizes");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Productor", b =>
+                {
+                    b.Property<string>("ProductorId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Productor_Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductorId");
+
+                    b.ToTable("Productors");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.TypeMovie", b =>
@@ -171,6 +244,12 @@ namespace WebApplication1.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateTime")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("BlogId", "UserId");
 
                     b.HasIndex("UserId");
@@ -212,6 +291,45 @@ namespace WebApplication1.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserFavoriteMovies");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Actor", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Prize", "Prize")
+                        .WithMany()
+                        .HasForeignKey("PrizeId");
+
+                    b.Navigation("Prize");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Directors", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Prize", "Prize")
+                        .WithMany()
+                        .HasForeignKey("PrizeId");
+
+                    b.Navigation("Prize");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Movie", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Directors", "Directors")
+                        .WithMany()
+                        .HasForeignKey("DirectorsId");
+
+                    b.HasOne("WebApplication1.Models.Prize", "Prize")
+                        .WithMany()
+                        .HasForeignKey("PrizeId");
+
+                    b.HasOne("WebApplication1.Models.Productor", "Productor")
+                        .WithMany()
+                        .HasForeignKey("ProductorId");
+
+                    b.Navigation("Directors");
+
+                    b.Navigation("Prize");
+
+                    b.Navigation("Productor");
                 });
 
             modelBuilder.Entity("WebApplication1.Models.MovieActor", b =>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,13 +22,17 @@ namespace WebApplication1.Models
         
         public float Ave_Rate { get; set; }
         public string Content_Overview { get; set; }
-        public IList<MovieActor> MovieActors { get; set; }
+        public Prize Prize { get; set; }
+    public Directors Directors { get; set; }
+    public Productor Productor { get; set; }
+    public IList<MovieActor> MovieActors { get; set; }
 
         public IList<TypeMovie> TypeMovies { get; set; }
 
         public IList<UserCommentMovie> UserCommentMovies { get; set; }
 
         public IList<UserFavoriteMovie> UserFavoriteMovies { get; set; }
+
 
 
     }

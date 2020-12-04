@@ -11,48 +11,48 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserBlogController : ControllerBase
+    public class PrizeController : ControllerBase
     {
         private readonly APIDbContext _context;
 
-        public UserBlogController(APIDbContext context)
+        public PrizeController(APIDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/UserBlog
+        // GET: api/Prize
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<UserBlog>>> GetUserBlogs()
+        public async Task<ActionResult<IEnumerable<Prize>>> GetPrizes()
         {
-            return await _context.UserBlogs.ToListAsync();
+            return await _context.Prizes.ToListAsync();
         }
 
-        // GET: api/UserBlog/5
+        // GET: api/Prize/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<UserBlog>> GetUserBlog(string id)
+        public async Task<ActionResult<Prize>> GetPrize(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
+            var prize = await _context.Prizes.FindAsync(id);
 
-            if (userBlog == null)
+            if (prize == null)
             {
                 return NotFound();
             }
 
-            return userBlog;
+            return prize;
         }
 
-        // PUT: api/UserBlog/5
+        // PUT: api/Prize/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUserBlog(string id, UserBlog userBlog)
+        public async Task<IActionResult> PutPrize(string id, Prize prize)
         {
-            if (id != userBlog.BlogId)
+            if (id != prize.PrizeId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(userBlog).State = EntityState.Modified;
+            _context.Entry(prize).State = EntityState.Modified;
 
             try
             {
@@ -60,7 +60,7 @@ namespace WebApplication1.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserBlogExists(id))
+                if (!PrizeExists(id))
                 {
                     return NotFound();
                 }
@@ -73,20 +73,20 @@ namespace WebApplication1.Controllers
             return NoContent();
         }
 
-        // POST: api/UserBlog
+        // POST: api/Prize
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<UserBlog>> PostUserBlog(UserBlog userBlog)
+        public async Task<ActionResult<Prize>> PostPrize(Prize prize)
         {
-            _context.UserBlogs.Add(userBlog);
+            _context.Prizes.Add(prize);
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateException)
             {
-                if (UserBlogExists(userBlog.BlogId))
+                if (PrizeExists(prize.PrizeId))
                 {
                     return Conflict();
                 }
@@ -96,28 +96,28 @@ namespace WebApplication1.Controllers
                 }
             }
 
-            return CreatedAtAction("GetUserBlog", new { id = userBlog.BlogId }, userBlog);
+            return CreatedAtAction("GetPrize", new { id = prize.PrizeId }, prize);
         }
 
-        // DELETE: api/UserBlog/5
+        // DELETE: api/Prize/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<UserBlog>> DeleteUserBlog(string id)
+        public async Task<ActionResult<Prize>> DeletePrize(string id)
         {
-            var userBlog = await _context.UserBlogs.FindAsync(id);
-            if (userBlog == null)
+            var prize = await _context.Prizes.FindAsync(id);
+            if (prize == null)
             {
                 return NotFound();
             }
 
-            _context.UserBlogs.Remove(userBlog);
+            _context.Prizes.Remove(prize);
             await _context.SaveChangesAsync();
 
-            return userBlog;
+            return prize;
         }
 
-        private bool UserBlogExists(string id)
+        private bool PrizeExists(string id)
         {
-            return _context.UserBlogs.Any(e => e.BlogId == id);
+            return _context.Prizes.Any(e => e.PrizeId == id);
         }
     }
 }

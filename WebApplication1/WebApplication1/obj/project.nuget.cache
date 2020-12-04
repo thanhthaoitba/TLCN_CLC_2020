@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pQLErrSAvkdtn0P38nxMmrXKkjrwG/I99ZRv5yM0RnAl+e7WJoa2Cy9U/2u9sHQ12sopA+nXOrGjjSgimyp2WA==",
+  "dgSpecHash": "w1JTJUBoRvbaLHFjDslAhvOFxZQSAXBbCtTfVn/0iTv0nqZJYxFzLlPwYEN5WRLPXIOgAC+6EumO6ag5FyYUjA==",
   "success": true,
-  "projectFilePath": "D:\\github\\Tiểu luận\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "D:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\HP\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
