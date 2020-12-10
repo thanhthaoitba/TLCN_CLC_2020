@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ConfigService } from '../apis/config.service';
 import { HttpClient } from '@angular/common/http';
 
+
 export interface Config {
   heroesUrl: string;
   textfile: string;
