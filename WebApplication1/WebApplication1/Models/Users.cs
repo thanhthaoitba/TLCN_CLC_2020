@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class User
+    public class Users
     {
         [Key]
         public string userId { get; set; }
-        [Column(TypeName = "nvarchar(20)")]
+        [Column(TypeName = "nvarchar(50)")]
         public string Name { get; set; }
         [Column(TypeName = "nvarchar(50)")]
         public string Country { get; set; }

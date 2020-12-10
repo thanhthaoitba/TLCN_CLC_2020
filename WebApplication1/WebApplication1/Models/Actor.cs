@@ -12,7 +12,7 @@ namespace WebApplication1.Models
         public string ActorId { get; set; }
         public string ActorName { get; set; }
         public string Content_Overview { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Birthday { get; set; }
         public string Country { get; set; }
         public string Height { get; set; }
         public string String { get; set; }

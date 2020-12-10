@@ -30,6 +30,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "MySql.Data": "8.0.22",
+          "MySqlConnector": "1.2.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1291,6 +1292,17 @@
           "lib/netstandard2.1/MySql.Data.dll": {},
           "lib/netstandard2.1/Ubiety.Dns.Core.dll": {},
           "lib/netstandard2.1/Zstandard.Net.dll": {}
+        }
+      },
+      "MySqlConnector/1.2.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/MySqlConnector.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/MySqlConnector.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -4665,6 +4677,13 @@
       "sha512": "sha512-DTKXORgTwQLbAjl8g5+YhvrAB+peQLfAZQ7gbm5Ejma37f/vBtZqP5aTnqZoJUzaQQgj4Psgdcnlo6IwYedyCg==",
       "path": "mysql.data/8.0.22",
       "hashPath": "mysql.data.8.0.22.nupkg.sha512"
+    },
+    "MySqlConnector/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-16DWy96uNr0ZCt3Qo0ZQwWcEQv6lwgcaolosNTdH+7hDTq45RfUEg09f9aI8bc6qDXXjQ1EacooJQ8AShg8ibg==",
+      "path": "mysqlconnector/1.2.0",
+      "hashPath": "mysqlconnector.1.2.0.nupkg.sha512"
     },
     "NETStandard.Library/1.6.1": {
       "type": "package",
