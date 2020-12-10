@@ -479,3 +479,4 @@ D:\GitHub\TLCN_CLC_2020\TLCN_CLC_2020\mr\WebApplication1\WebApplication1\bin\Deb
 D:\GitHub\TLCN_CLC_2020\TLCN_CLC_2020\mr\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 D:\GitHub\TLCN_CLC_2020\TLCN_CLC_2020\mr\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
 D:\GitHub\TLCN_CLC_2020\TLCN_CLC_2020\mr\WebApplication1\WebApplication1\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+D:\GitHub\TLCN_CLC_2020\TLCN_CLC_2020\mr\WebApplication1\WebApplication1\obj\Debug\netcoreapp3.1\WebApplication1.MvcApplicationPartsAssemblyInfo.cache

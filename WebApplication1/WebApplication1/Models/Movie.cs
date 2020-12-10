@@ -13,14 +13,14 @@ namespace WebApplication1.Models
         public string movieId { get; set; }
         [Column(TypeName ="nvarchar(100)")]
         public string MovieName { get; set; }
-        [Column(TypeName = "nvarchar(5)")]
+        [Column(TypeName = "nvarchar(50)")]
         public string ReleaseYear { get; set; }
         public int Length { get; set; } // minutes
         [Column(TypeName = "nvarchar(1000)")]
         public string Link_Trailer { get; set; }
         [Column(TypeName = "nvarchar(100)")]
         
-        public float Ave_Rate { get; set; }
+        public float Avg_Rate { get; set; }
         public string Content_Overview { get; set; }
         public Prize Prize { get; set; }
     public Directors Directors { get; set; }
