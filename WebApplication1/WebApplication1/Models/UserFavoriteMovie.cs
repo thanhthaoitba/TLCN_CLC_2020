@@ -10,7 +10,7 @@ namespace WebApplication1.Models
         public Movie Movie { get; set; }
         public string MovieId { get; set; }
 
-        public User User { get; set; }
+        public Users User { get; set; }
         public string UserId { get; set; }
 
     }

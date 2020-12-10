@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\github\\TLCN_CLC_2020\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+  "FilePath": "d:\\GitHub\\TLCN_CLC_2020\\TLCN_CLC_2020\\mr\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14387,7 +14387,7 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 900
   },
   "RootNamespace": "WebApplication1",
   "Documents": [],

@@ -17,7 +17,7 @@ namespace WebApplication1.Models
             modelBuilder.Entity<Actor>().HasKey(s => s.ActorId);
             modelBuilder.Entity<Blog>().HasKey(s => s.BlogId);
             modelBuilder.Entity<Genre>().HasKey(s => s.TypeId);
-            modelBuilder.Entity<User>().HasKey(s => s.userId);
+            modelBuilder.Entity<Users>().HasKey(s => s.userId);
             modelBuilder.Entity<Prize>().HasKey(s => s.PrizeId);
             modelBuilder.Entity<Productor>().HasKey(s => s.ProductorId);
             modelBuilder.Entity<Directors>().HasKey(s => s.DirectorsId);
@@ -55,7 +55,7 @@ namespace WebApplication1.Models
                 .HasForeignKey(sc => sc.MovieId);
 
             modelBuilder.Entity<UserCommentMovie>()
-                .HasOne<User>(sc => sc.User)
+                .HasOne<Users>(sc => sc.User)
                 .WithMany(s => s.UserCommentMovies)
                 .HasForeignKey(sc => sc.UserId);
 
@@ -67,7 +67,7 @@ namespace WebApplication1.Models
                 .HasForeignKey(sc => sc.MovieId);
 
             modelBuilder.Entity<UserFavoriteMovie>()
-                .HasOne<User>(sc => sc.User)
+                .HasOne<Users>(sc => sc.User)
                 .WithMany(s => s.UserFavoriteMovies)
                 .HasForeignKey(sc => sc.UserId);
 
@@ -78,7 +78,7 @@ namespace WebApplication1.Models
                 .HasForeignKey(sc => sc.BlogId);
 
             modelBuilder.Entity<UserBlog>()
-                .HasOne<User>(sc => sc.User)
+                .HasOne<Users>(sc => sc.User)
                 .WithMany(s => s.UserBlogs)
                 .HasForeignKey(sc => sc.UserId);
 
@@ -86,7 +86,7 @@ namespace WebApplication1.Models
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Blog> Blogs { get; set; }
     public DbSet<Genre> Genres { get; set; }
-    public DbSet<User> Users { get; set; }
+    public DbSet<Users> Users { get; set; }
     public DbSet<Actor> Actors { get; set; }
     public DbSet<MovieActor> MovieActors { get; set; }
     public DbSet<TypeMovie> TypeMovies { get; set; }
