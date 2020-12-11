@@ -21,6 +21,7 @@ export interface Config {
 export class HomeComponent implements OnInit {
 
     constructor(private router: Router ) {}
+    name = 'World';
     showConfig() {
       // this.CallAPI.
       console.log("=====================")

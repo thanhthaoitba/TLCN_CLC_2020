@@ -195,9 +195,9 @@ $(function(){
 		infinite: true,
 		slidesToShow: 4,
 		slidesToScroll: 4,
-		arrows: false,
+		arrows: true,
 		draggable:true,
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 2000,
 		dots: true,
 		responsive: [

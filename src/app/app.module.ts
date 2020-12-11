@@ -19,7 +19,8 @@ import { FooterComponent } from '../app/layout/footer/footer.component'
 import { userrate } from '../app/userrate/userrate.component'
 import { userprofile } from '../app/userprofile/userprofile.component'
 import { userfavoritieslist } from '../app/userfavoritieslist/userfavoritieslist.component'
-import { blogdetail } from '../app/blogdetail/blogdetail.component'
+import { blogdetail } from '../app/blogdetail/blogdetail.component';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 
 
@@ -46,7 +47,8 @@ import { blogdetail } from '../app/blogdetail/blogdetail.component'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule
+    // NgbModule,
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
   bootstrap: [AppComponent]
