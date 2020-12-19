@@ -220,3 +220,38 @@
                             .bottom-products-suggest .product-short-suggest .price del {
                             color: #D0D0D0;
                             }
+                            .hover-slider{
+
+                           }
+                           
+                           .hover-slider .movie-item{
+                               position: relative;
+                           
+                           }
+                           
+                           
+                           
+                           .hover-slider .movie-item .hover-movie-item{
+                               /* position: absolute;
+                               top: 0;
+                               width: 100%;
+                               height: 100%;
+                               z-index: 1;
+                               background-color: gray;
+                               opacity:.6; */
+                             position: absolute;
+                             opacity: 0;
+                             transition:all .5s;
+                             
+                           
+                           }
+                           
+                           .hover-slider .movie-item:hover .hover-movie-item{
+                             top: 0;
+                             width: 100%;
+                             height: 100%;
+                             z-index: 1;
+                             background-color: #00000085;
+                             opacity: 1;
+                             
+                           }

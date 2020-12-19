@@ -12,6 +12,8 @@ import {userrate} from '../app/userrate/userrate.component'
 import {userprofile} from '../app/userprofile/userprofile.component'
 import {userfavoritieslist} from '../app/userfavoritieslist/userfavoritieslist.component'
 import {blogdetail} from '../app/blogdetail/blogdetail.component'
+import { DirectorDetail } from "../app/director/director.component";
+import {productorDetail  } from "../app/productor/productor.component";
 
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'UserProfile',             component: userprofile },
   { path: 'UserFlim',             component: userfavoritieslist },
   { path: 'BlogDetail',             component: blogdetail },
+  { path: 'DirectorDetail',             component: DirectorDetail },
+  { path: 'ProductorDetail',             component: productorDetail },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];
 

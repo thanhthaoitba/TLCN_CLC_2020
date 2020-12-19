@@ -195,7 +195,7 @@ $(function(){
 		infinite: true,
 		slidesToShow: 4,
 		slidesToScroll: 4,
-		arrows: false,
+		arrows: true,
 		draggable:true,
 		autoplay: true,
 		autoplaySpeed: 2000,

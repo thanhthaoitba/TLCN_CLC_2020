@@ -1,5 +1,10 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
+import {NgForm  } from "@angular/forms";
+import {IdActor} from "./../services/profile"
+import { Actor } from "../celebritypeople/shared/celebritypeople.model";
+import { ActorService } from "../celebritypeople/shared/celebritypeople.service";
+
 
 @Component({
     selector: 'app-home',
@@ -8,11 +13,26 @@ import { Router } from '@angular/router';
 })
 export class celebritylist implements OnInit {
 
-    constructor(private router: Router ) {}
+  public list:Actor
+
+    constructor(private service:ActorService ,private router:Router) {}
 
     ngOnInit() {
+      this.getPath();
     }
-    getPath(){
-      return this.router.url;
+     async getPath(){
+      const a= await this.service.postActorDetail() as Actor;      
+      this.list=a
+      console.log(a)
+    }
+    resetForm(form:NgForm)
+    {
+      form.form.reset();
+      this.service.formData=new Actor();
+    
+    }
+    public onClick= async (id)=>{
+      IdActor.id=id;
+      this.router.navigate(['/FamousPeople/']);
     }
 }

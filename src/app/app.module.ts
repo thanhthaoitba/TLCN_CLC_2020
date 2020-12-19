@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Type } from '@angular/core';
 import {HomeComponent} from '../app/home/home.component';
 import {CommingSoon} from '../app/commingsoon/commingsoon.component';
 import {Err404} from '../app/Err404/Err404.component'
@@ -18,6 +18,12 @@ import {userrate} from '../app/userrate/userrate.component'
 import {userprofile} from '../app/userprofile/userprofile.component'
 import {userfavoritieslist} from '../app/userfavoritieslist/userfavoritieslist.component'
 import {blogdetail} from '../app/blogdetail/blogdetail.component'
+import { HttpClientModule } from "@angular/common/http";
+import {  FormsModule} from "@angular/forms";
+
+import {DirectorDetail} from "../app/director/director.component"
+import { productorDetail } from "../app/productor/productor.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,11 +41,17 @@ import {blogdetail} from '../app/blogdetail/blogdetail.component'
     userprofile,
     userfavoritieslist,
     blogdetail,
+  
+    DirectorDetail,
+    productorDetail,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [{provide: APP_BASE_HREF, useValue : '/' }],
   bootstrap: [AppComponent]
