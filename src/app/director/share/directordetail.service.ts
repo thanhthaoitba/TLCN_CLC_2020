@@ -26,6 +26,19 @@ export class DirectorService{
         .toPromise()
         .then(res=>this.list=res as Director[]);
     }
+    
+    getListfull = async () => {
+        try {
+
+            const result = await this.http.get(this.baseURL).toPromise();
+            console.log(result)
+            return result;
+        }
+        catch (e) {
+            console.log(e);
+            // this.removeToken();
+        }
+    }
     getList = async (id) => {
         try {
 

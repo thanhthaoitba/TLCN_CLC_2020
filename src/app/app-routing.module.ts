@@ -14,7 +14,7 @@ import {userfavoritieslist} from '../app/userfavoritieslist/userfavoritieslist.c
 import {blogdetail} from '../app/blogdetail/blogdetail.component'
 import { DirectorDetail } from "../app/director/director.component";
 import {productorDetail  } from "../app/productor/productor.component";
-
+import {  DirectorList} from "../app/directorlist/directorlist.component"
 const routes: Routes = [
   { path: 'home',             component: HomeComponent },
   { path: 'comming',             component: CommingSoon },
@@ -23,12 +23,13 @@ const routes: Routes = [
   { path: 'MovieList',             component: movielist },
   { path: 'MovieSingle',             component: moviesingle },
   { path: 'FamousList',             component: celebritylist },
-  { path: 'FamousPeople',             component: celebritypeople },
+  { path: 'FamousPeople/:id',             component: celebritypeople },
   { path: 'UserRate',             component: userrate },
   { path: 'UserProfile',             component: userprofile },
   { path: 'UserFlim',             component: userfavoritieslist },
-  { path: 'BlogDetail',             component: blogdetail },
-  { path: 'DirectorDetail',             component: DirectorDetail },
+  { path: 'BlogDetail/:id',             component: blogdetail },
+  { path: 'DirectorDetail/:id',             component: DirectorDetail },
+  { path: 'DirectorList',             component: DirectorList },
   { path: 'ProductorDetail',             component: productorDetail },
   { path: '**', redirectTo: '/home', pathMatch: 'full' }
 ];

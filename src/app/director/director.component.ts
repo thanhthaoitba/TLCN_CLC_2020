@@ -6,20 +6,27 @@ import {  DirectorService} from "../director/share/directordetail.service";
 import { Director } from "../director/share/directordetail.model";
 import { Prize } from "../prize/share/prize.model"
 import { PrizeService } from "../prize/share/prize.service";
-
+import { MediaDirector } from "../director/mediadirector/mediadirector.model";
+import { MediaDirectorService } from "../director/mediadirector/mediadirector.service";
+import { DirectorPhoto } from "../director/photodirector/photodirector.model";
+import { PhotoDirectorService } from "../director/photodirector/photodirector.service";
+import { Location } from "@angular/common";
 @Component({
-    selector: 'app-actor-detail-form',
+    selector: 'app-director-detail-form',
     templateUrl: './director.component.html',
     styleUrls: ['./director.component.css']
 })
 export class DirectorDetail implements OnInit {
     public Director : Director
     public Prize: Prize
-    constructor(private service: DirectorService, private PrizeService: PrizeService) {
+    public media:MediaDirector
+    public photo:DirectorPhoto
+    constructor(private service: DirectorService, private PrizeService: PrizeService, private Photoservice:PhotoDirectorService, 
+      private MediaService:MediaDirectorService, private location:Location) {
     }
 
     ngOnInit() {
-     IdDirector.Id="Dr01"//Get by id 
+   
       this.getPath()
       
     }
@@ -37,10 +44,18 @@ export class DirectorDetail implements OnInit {
       this.Director.Image=movie["image"]
       this.Director.PrizeId=movie["prizeId"]
       this.Prize=new Prize()
+      this.Director.Linkfb=movie["linkfb"]
+      this.Director.LinkTwiter=movie["linkTwiter"]
       const a=await this.PrizeService.getList(this.Director.PrizeId) as any;
       this.Prize.prizeId=a["prizeId"]
       this.Prize.prizeName=a["prize_Name"]
-    
+      const getphoto=await this.Photoservice.getList(this.Director.DirectorId) as any
+      this.photo=getphoto
+      const getmedia= await this.MediaService.getList(this.Director.DirectorId) as any
+      this.media=getmedia    
 
+    }
+    goback():void{
+      this.location.back();
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
+    selector: 'app-userrate',
     templateUrl: './userrate.component.html',
     styleUrls: ['./userrate.component.css']
 })

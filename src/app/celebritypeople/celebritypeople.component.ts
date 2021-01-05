@@ -14,7 +14,7 @@ import { PhotoActorService } from "../celebritypeople/photoactor/photoactor.serv
 import { ActivatedRoute } from "@angular/router";
 import {Location} from"@angular/common"
 @Component({
-    selector: 'app-actor-detail-form',
+    selector: 'app-celebritypeople',
     templateUrl: './celebritypeople.component.html',
     styleUrls: ['./celebritypeople.component.css']
 })
@@ -23,7 +23,7 @@ export class celebritypeople implements OnInit {
     public prize:Prize
     public mediaactor:  MediaActor
     public photoactor:PhotoActor
-    
+    // id: String;
     constructor(private service: ActorService, private serviceprize:PrizeService,private serviceMedia: MediaService, 
       private PhotoService:PhotoActorService, private route:ActivatedRoute,private location:Location) {
 
@@ -36,7 +36,7 @@ export class celebritypeople implements OnInit {
     }
     resetForm(form:NgForm)
     {
-      form.form.reset();
+      // form.form.reset();
       this.service.formData=new Actor();
     
     }
@@ -52,7 +52,9 @@ export class celebritypeople implements OnInit {
     }
     async getPath()
     {
-      IdActor.id="Ac01"
+      // IdActor.id="Ac01"
+      console.log(IdActor.id);
+
       this.actor = new Actor()
       const movie = await this.service.getList(IdActor.id) as Actor;
       console.log(movie)
@@ -69,6 +71,7 @@ export class celebritypeople implements OnInit {
       const prizeDetail=await this.serviceprize.getList(this.actor.PrizeId) as Prize
       // this.prize.prizeId=prizeDetail["prizeId"]
       this.prize=prizeDetail
+      this.prize.prizeName=prizeDetail["prize_Name"]
      
       const list=await this.serviceMedia.getList(this.actor.ActorId) as MediaActor
       this.mediaactor=list

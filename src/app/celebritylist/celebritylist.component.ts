@@ -7,7 +7,7 @@ import { ActorService } from "../celebritypeople/shared/celebritypeople.service"
 
 
 @Component({
-    selector: 'app-home',
+    selector: 'app-celeritylist',
     templateUrl: './celebritylist.component.html',
     styleUrls: ['./celebritylist.component.css']
 })
@@ -33,6 +33,7 @@ export class celebritylist implements OnInit {
     }
     public onClick= async (id)=>{
       IdActor.id=id;
-      this.router.navigate(['/FamousPeople/']);
+      console.log(IdActor.id);
+      this.router.navigate(['/FamousPeople/', IdActor.id]);
     }
 }

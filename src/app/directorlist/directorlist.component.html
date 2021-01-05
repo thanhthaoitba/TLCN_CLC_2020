@@ -97,10 +97,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>celebrity listing - grid</h1>
+					<h1>Director listing - grid</h1>
 					<ul class="breadcumb">
 						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span> celebrity listing</li>
+						<li> <span class="ion-ios-arrow-right"></span> Director listing</li>
 					</ul>
 				</div>
 			</div>
@@ -130,12 +130,12 @@
 					<li *ngFor="let user of list">
 						<div class="ceb-item">
 							<!-- <a href="/FamousPeople/{{user.actorId}}"><img src="{{user.string}}"  height="290px" Width="275px"></a> -->
-							<a (click)="onClick(user.actorId)"><img src="{{user.string}}"  height="290px" Width="275px"></a>
+							<a (click)="onClick(user.directorsId)"><img src="{{user.image}}"  height="290px" Width="275px"></a>
 							<div class="ceb-infor">
 								<!-- <h2><a href="/FamousPeople/{{user.actorId}}" style="text-decoration:none">{{user.actorName}}</a></h2> -->
-								<h2><a (click)="onClick(user.actorId)" style="text-decoration:none">{{user.actorName}}</a></h2>
+								<h2><a (click)="onClick(user.directorsId)" style="text-decoration:none">{{user.directors_Name}}</a></h2>
 								<!-- <button type="button" class="btn btn-link btn-sm" (click)="onClick(user.actorId)">{{user.ActorName}}</button> -->
-								<span>actor, {{user.country}}</span>
+								<span>Director</span>
 								
 							</div>
 						</div>

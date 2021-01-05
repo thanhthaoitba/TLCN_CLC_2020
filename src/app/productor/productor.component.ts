@@ -3,6 +3,8 @@ import {NgForm  } from "@angular/forms";
 import { Productor } from "../productor/share/productor.model";
 import {  ProductorService} from "../productor/share/productor.service";
 import { IdProductor, Profile } from "../services/profile";
+import { MediaProductor } from "../productor/MediaProductor/mediaproductor.model";
+import { MediaService } from "../productor/MediaProductor/mediaproductor.service";
 @Component({
     selector: 'app-productor',
     templateUrl: './productor.component.html',
@@ -10,7 +12,8 @@ import { IdProductor, Profile } from "../services/profile";
 })
 export class productorDetail implements OnInit{
     public productor:Productor
-    constructor(private service:ProductorService){
+    public media:MediaProductor
+    constructor(private service:ProductorService, private serviceMedia:MediaService){
 
     }
     ngOnInit(){
@@ -32,5 +35,9 @@ export class productorDetail implements OnInit{
         this.productor.name_manager=name["name_Manager"]
         this.productor.content_overview=name["content_overView"]
         this.productor.image=name["image"]
+        this.productor.Biography=name["biography"]
+        const detail_media=await this.serviceMedia.getList(IdProductor.Id) as any
+        this.media=detail_media
+
     }
 }

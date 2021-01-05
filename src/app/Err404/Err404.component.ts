@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
+    selector: 'app-err',
     templateUrl: './Err404.component.html',
     styleUrls: ['./Err404.component.css']
 })

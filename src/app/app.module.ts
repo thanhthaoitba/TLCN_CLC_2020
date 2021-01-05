@@ -23,6 +23,7 @@ import {  FormsModule} from "@angular/forms";
 
 import {DirectorDetail} from "../app/director/director.component"
 import { productorDetail } from "../app/productor/productor.component";
+import { DirectorList } from "../app/directorlist/directorlist.component";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { productorDetail } from "../app/productor/productor.component";
   
     DirectorDetail,
     productorDetail,
+    DirectorList,
 
   ],
   imports: [

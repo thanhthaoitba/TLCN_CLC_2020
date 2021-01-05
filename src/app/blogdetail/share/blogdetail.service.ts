@@ -9,14 +9,14 @@ export class BlogService{
     private baseURL='/api/Blog';
     list:Blog[];
     constructor(private http:HttpClient){}
-    postDirectorDetail(){
+    getBloglist(){
         return this.http.post(this.baseURL, this.formData);
     }
-    putDirectorDetail(){
+    putBlogDetail(){
         return this.http.put(`${this.baseURL}/${this.formData.blogId}`,this.formData);
 
     }
-    deleteDirectorDetail(id:string)
+    deleteBlogDetail(id:string)
     {
         return this.http.delete(`${this.baseURL}/${id}`)
     }
@@ -28,7 +28,20 @@ export class BlogService{
     getList = async (id) => {
         try {
 
-            const result = await this.http.get(this.baseURL+id).toPromise();
+            const result = await this.http.get(this.baseURL+"/"+id).toPromise();
+            console.log(result)
+            return result;
+        }
+        catch (e) {
+            console.log(e);
+            // this.removeToken();
+        }
+    }
+    getblogdetail=async ()=>
+    {
+        try {
+
+            const result = await this.http.get(this.baseURL).toPromise();
             console.log(result)
             return result;
         }
